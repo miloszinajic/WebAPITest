@@ -45,8 +45,8 @@ components:
     Token:
       type: object
       properties:
-        id:
-          grantType: string
+        grantType:
+          type: string
           description: Always "CLIENT_CREDENTIALS"
         clientId:
           type: string
@@ -57,25 +57,25 @@ components:
         scope:
           type: string
           description: Always "public_api/full_access"
-
-      TokenResponse:
-        type: object
-        properties:
-          id_token:
-            grantType: string
-            description: Always null
-          access_token:
-            type: string
-            description: Access token
-          refresh_token:
-            type: string
-            description: Always null
-          expires_in:
-            type: string
-            description: Expire time in milicesonds
-          token_type:
-            type: string
-            description: Always "Bearer"
+          
+    TokenResponse:
+      type: object
+      properties:
+        id_token:
+          type: string
+          description: Always null
+        access_token:
+          type: string
+          description: Access token
+        refresh_token:
+          type: string
+          description: Always null
+        expires_in:
+          type: string
+          description: Expire time in milicesonds
+        token_type:
+          type: string
+          description: Always "Bearer"
 
   responses:
     400Error:
