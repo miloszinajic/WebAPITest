@@ -7,14 +7,14 @@ info:
 servers:
   - url: https://api.stage.ananastest.com
 
-security:
-  - BasicAuth: []
+# security:
+#   - BasicAuth: []
 
 paths:
   /iam/api/v1/auth/token:
     post:
       summary: Get token
-      description: Get token 
+      description: Get token description
       requestBody:        
         description: Optional description
         required: true
@@ -22,9 +22,16 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Token'
+            examples:            
+              token:  
+                $ref: '#/components/examples/token'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Token'          
+              $ref: '#/components/schemas/Token'
+            examples:            
+              token:  
+                $ref: '#/components/examples/token'
+          
       responses:
         '200':
           description: Successfully returned token
@@ -34,12 +41,23 @@ paths:
                   $ref: '#/components/schemas/TokenResponse'                  
         '400':          
           $ref: '#/components/responses/400Error'          
+        '500':          
+          $ref: '#/components/responses/500Error'          
 
 components:
   securitySchemes:
     BasicAuth:
       type: http
       scheme: basic
+
+  examples:
+    token:
+      value:
+        grantType: "CLIENT_CREDENTIALS"
+        clientId: "asdmgd1l2g67isfdlk"
+        clientSecret: "askldjdlgkjskmbkgfmk9hi99494gh743wjkerh239jr3995932jdwja="
+        scope: "public_api/full_access"
+      summary: Token example
 
   schemas:
     Token:
@@ -80,6 +98,15 @@ components:
   responses:
     400Error:
       description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object 
+            properties:
+              message:
+                type: string
+    500Error:
+      description: Internal server error
       content:
         application/json:
           schema:
