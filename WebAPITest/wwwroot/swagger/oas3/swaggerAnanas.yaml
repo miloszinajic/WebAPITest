@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Ananas API
+  description: Ananas API documentation
+
+servers:
+  - url: https://api.stage.ananastest.com
+
+security:
+  - BasicAuth: []
+
+paths:
+  /iam/api/v1/auth/token:
+    post:
+      summary: Get token
+      description: Get token 
+      requestBody:        
+        description: Optional description
+        required: true
+        content:        
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Token'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Token'          
+      responses:
+        '200':
+          description: Successfully returned token
+          content:
+            application/json:
+              schema:                                                 
+                  $ref: '#/components/schemas/TokenResponse'                  
+        '400':          
+          $ref: '#/components/responses/400Error'          
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+
+  schemas:
+    Token:
+      type: object
+      properties:
+        id:
+          grantType: string
+          description: Always "CLIENT_CREDENTIALS"
+        clientId:
+          type: string
+          description: client Id received from merchant portal
+        clientSecret:
+          type: string
+          description: client secret received from merchant portal
+        scope:
+          type: string
+          description: Always "public_api/full_access"
+
+      TokenResponse:
+        type: object
+        properties:
+          id_token:
+            grantType: string
+            description: Always null
+          access_token:
+            type: string
+            description: Access token
+          refresh_token:
+            type: string
+            description: Always null
+          expires_in:
+            type: string
+            description: Expire time in milicesonds
+          token_type:
+            type: string
+            description: Always "Bearer"
+
+  responses:
+    400Error:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object 
+            properties:
+              message:
+                type: string
+  
