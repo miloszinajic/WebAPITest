@@ -30,8 +30,8 @@ paths:
               $ref: '#/components/schemas/Token'
             examples:            
               token:  
-                $ref: '#/components/examples/token'
-          
+                $ref: '#/components/examples/token'          
+
       responses:
         '200':
           description: Successfully returned token
@@ -39,6 +39,40 @@ paths:
             application/json:
               schema:                                                 
                   $ref: '#/components/schemas/TokenResponse'                  
+        '400':          
+          $ref: '#/components/responses/400Error'          
+        '500':          
+          $ref: '#/components/responses/500Error'          
+
+  /product/api/v1/merchant-integration/products:
+    get:
+      summary: Get all products
+      description: Get all products description
+      requestBody:        
+        description: Optional description
+        required: true
+        content:        
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Products'
+            # examples:            
+            #   token:  
+            #     $ref: '#/components/examples/token'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Products'
+            # examples:            
+            #   token:  
+            #     $ref: '#/components/examples/token'          
+                                
+      responses:
+        '200':
+          description: Successfully returned list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: '#/components/schemas/ProductsResponse'                  
         '400':          
           $ref: '#/components/responses/400Error'          
         '500':          
@@ -75,6 +109,40 @@ components:
         scope:
           type: string
           description: Always "public_api/full_access"
+
+    Products:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Product id
+        externalId:
+          type: integer
+          description: External id
+        ean:
+          type: string
+          description: Ean code
+        sku:
+          type: string
+          description: SKU
+        productName:
+          type: string
+          description: Product name
+        packageWeightValue:
+          type: number
+          description: Package weight value
+        packageWeightUnit:
+          type: string
+          description: Package weight unit
+        basePrice:
+          type: number
+          description: Base price
+        stockLevel:
+          type: number
+          description: Stock level
+        vat:
+          type: number
+          description: VAT
           
     TokenResponse:
       type: object
@@ -94,6 +162,54 @@ components:
         token_type:
           type: string
           description: Always "Bearer"
+
+    ProductsResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Id
+        externalId:
+          type: string
+          description: External id
+        ean:
+          type: string
+          description: Ean code
+        name:
+          type: string
+          description: Product name
+        description:
+          type: string
+          description: Description
+        brand:
+          type: string
+          description: Brand
+        sku:
+          type: string
+          description: Stock keeping unit
+        productType:
+          type: string
+          description: Product type
+        categories:
+          type: array
+          items:
+            type: string
+        basePrice:
+          type: number
+          description: Base price
+        vat:
+          type: number
+          description: VAT
+        stockLevel:
+          type: number
+          description: Stock level
+        packageWeightValue:
+          type: number
+          description: Package weight value
+        packageWeightUnit:
+          type: string
+          description: Package weight unit
+        
 
   responses:
     400Error:
