@@ -7,6 +7,11 @@ info:
 servers:
   - url: https://api.stage.ananastest.com
 
+contact:
+  name: API Support
+  url: http://ovdedodjeurlananassuporta.com
+  email: ananas@example.com
+
 # security:
 #   - BasicAuth: []
 
@@ -139,8 +144,12 @@ components:
           type: number
           description: Package weight value
         packageWeightUnit:
-          type: string
-          description: Package weight unit
+          # type: string
+          # description: Package weight unit
+          enum:
+            - 'kg'
+            - 'g'
+          default: 'kg'
         basePrice:
           type: number
           description: Base price
