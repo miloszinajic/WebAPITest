@@ -7,11 +7,6 @@ info:
 servers:
   - url: https://api.stage.ananastest.com
 
-contact:
-  name: API Support
-  url: http://ovdedodjeurlananassuporta.com
-  email: ananas@example.com
-
 # security:
 #   - BasicAuth: []
 
