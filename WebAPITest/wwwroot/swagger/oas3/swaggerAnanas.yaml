@@ -128,7 +128,7 @@ components:
       scheme: bearer
       bearerFormat: JWT
 
-  perameters:
+  parameters:
     Origin:
       in: header
       name: Origin
