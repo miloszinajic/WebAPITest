@@ -14,7 +14,7 @@ paths:
   /iam/api/v1/auth/token:
     post:
       parameters:
-        - $ref: '#/components/headers/Origin'      
+        - $ref: '#/components/parameters/Origin'      
       summary: Get token
       description: Get token description
       requestBody:        
@@ -128,7 +128,7 @@ components:
       scheme: bearer
       bearerFormat: JWT
 
-  headers:
+  perameters:
     Origin:
       in: header
       name: Origin
