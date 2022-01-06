@@ -14,7 +14,7 @@ paths:
   /iam/api/v1/auth/token:
     post:
       headers:
-        - $ref: '#/components/parameters/Origin'      
+        - $ref: '#/components/headers/Origin'      
       summary: Get token
       description: Get token description
       requestBody:        
@@ -132,6 +132,7 @@ components:
     Origin:
       in: header
       name: Origin
+      value: https://stage.ananastest.com
       schema:
         type: string
       required: true    
