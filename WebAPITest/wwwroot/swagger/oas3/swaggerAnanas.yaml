@@ -15,8 +15,7 @@ paths:
     post:
       # parameters:
       #   - $ref: '#/components/parameters/Origin'      
-      parameters:
-        Origin:
+      parameters:        
         - in: header
           name: Origin
           schema:
