@@ -17,7 +17,7 @@ paths:
       #   - $ref: '#/components/parameters/Origin'      
       parameters:
         Origin:
-          in: header
+        - in: header
           name: Origin
           schema:
             type: string
