@@ -13,8 +13,8 @@ servers:
 paths:
   /iam/api/v1/auth/token:
     post:
-      parameters:
-        - $ref: '#/components/parameters/X-partner'      
+      headers:
+        - $ref: '#/components/parameters/Origin'      
       summary: Get token
       description: Get token description
       requestBody:        
@@ -128,10 +128,10 @@ components:
       scheme: bearer
       bearerFormat: JWT
 
-  parameters:
-    X-partner:
+  headers:
+    Origin:
       in: header
-      name: X-partner
+      name: Origin
       schema:
         type: string
       required: true    
