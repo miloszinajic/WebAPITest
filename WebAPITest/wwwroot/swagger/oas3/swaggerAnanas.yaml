@@ -132,7 +132,7 @@ components:
     Origin:
       in: header
       name: Origin
-      default: https://stage.ananastest.com
+      value: https://stage.ananastest.com
       schema:
         type: string
       required: false    
