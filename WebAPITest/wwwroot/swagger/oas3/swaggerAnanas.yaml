@@ -13,8 +13,15 @@ servers:
 paths:
   /iam/api/v1/auth/token:
     post:
+      # parameters:
+      #   - $ref: '#/components/parameters/Origin'      
       parameters:
-        - $ref: '#/components/parameters/Origin'      
+        Origin:
+        in: header
+        name: Origin
+        schema:
+          type: string
+        required: true
       summary: Get token
       description: Get token description
       requestBody:        
