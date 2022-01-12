@@ -181,12 +181,21 @@ components:
       summary: Token response example
     productsResponse:
       value:
-        id_token: null
-        access_token: "eyJraWQiOiIxREd2YmNPRkdpMkhuRXdiNUtyYXAySkc2Q0x4YkdxOHJFR1ZiYklSMU93PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIyc3Q4c2h2bmNobjdsamNuNDhwZWs2Y21xMSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoicHVibGljX2FwaVwvZnVsbF9hY2Nlc3MiLCJhdXRoX3RpbWUiOjE2NDE5OTczODgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xXzIxbnlOTE9XbSIsImV4cCI6MTY0MjA4Mzc4OCwiaWF0IjoxNjQxOTk3Mzg4LCJ2ZXJzaW9uIjoyLCJqdGkiOiJhNjYwOWNhZC0wNmM3LTRiZGYtOTY0Zi1mNWY4Mzk1OWI5ZTgiLCJjbGllbnRfaWQiOiIyc3Q4c2h2bmNobjdsamNuNDhwZWs2Y21xMSJ9.DokIoF3xkCfJe94ye6jSPCzbhpomQSLXM78UULH_MbBt_M16iVXWlMhnCq50OrZYO3J7oBYXg10SaodC75B7dVVC1CW2Q7S_1fKvAjbnG8K6IeRWFb3OAs285JgqCKXmUSdjrHhMCpwFZazojqF5MPyijHWk72MLAxypXTRmDrVx4aQaNyIFeDjL0O58WXqUpOyAJR7BP7EkXnUcbc0HHXaGggQpPULBmpcSsezTkQ0VnsphxH63n0ctFPpYmzBudhsXejgytk7bLDtVMaBh_6suwV80ZKljpokggBUqxosWoHKmzJ5dYDs-Ecmbkhuo8zOJI9oRamtW2jXRnOxLaQx3A"
-        refresh_token: null
-        expires_in: 86400
-        token_type: "Bearer"
-      summary: Token response example
+        id: 1769761
+        externalId: null
+        ean: "194512452102"
+        name: "UNDER ARMOUR UA HOVR Summit Mid"
+        description: "Pokažite svoju autentičnost u Under Armour UA HOVR Summit Mid patikama"
+        brand: "{\"id\":1600,\"name\":\"UNDER ARMOUR\"}"          
+        sku: "194512452102"
+        productType: "Sportske Patike"
+        categories: "Muške patike"
+        basePrice: 5000
+        vat: 10.00
+        stockLevel: 20
+        packageWeightValue: 0.3
+        packageWeightUnit: "kg"
+      summary: Products response example
 
 
   schemas:
