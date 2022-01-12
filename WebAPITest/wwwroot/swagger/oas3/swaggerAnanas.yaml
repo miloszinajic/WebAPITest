@@ -211,7 +211,7 @@ components:
       type: object
       properties:
         id_token:
-          type: long
+          type: integer
           description: Always null
         access_token:
           type: string
@@ -220,7 +220,7 @@ components:
           type: string
           description: Not available
         expires_in:
-          type: long
+          type: integer
           description: Time in seconds when token will expire
         token_type:
           type: string
