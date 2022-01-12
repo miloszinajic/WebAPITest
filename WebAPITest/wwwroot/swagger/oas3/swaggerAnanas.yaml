@@ -47,9 +47,9 @@ paths:
             application/json:
               schema:                                                 
                   $ref: '#/components/schemas/TokenResponse'   
-            examples:            
-              tokenResponse:  
-                $ref: '#/components/examples/tokenResponse'                         
+              examples:            
+                tokenResponse:  
+                  $ref: '#/components/examples/tokenResponse'                         
         '400':          
           $ref: '#/components/responses/400Error'          
         '500':          
