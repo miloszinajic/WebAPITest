@@ -211,20 +211,20 @@ components:
       type: object
       properties:
         id_token:
-          type: string
+          type: long
           description: Always null
         access_token:
           type: string
           description: Access token
         refresh_token:
           type: string
-          description: Always null
+          description: Not available
         expires_in:
-          type: string
-          description: Expire time in milicesonds
+          type: long
+          description: Time in seconds when token will expire
         token_type:
           type: string
-          description: Always "Bearer"
+          description: Always Bearer
 
     ProductsResponse:
       type: object
