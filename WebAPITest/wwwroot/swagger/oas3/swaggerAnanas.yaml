@@ -189,9 +189,7 @@ components:
         brand: "{\"id\":1600,\"name\":\"UNDER ARMOUR\"}"          
         sku: "194512452102"
         productType: "Sportske Patike"
-        categories:
-          type: array
-            "Muške patike", "Sportska oprema"
+        categories: ["Muške patike", "Sportska oprema"]
         basePrice: 5000
         vat: 10.00
         stockLevel: 20
