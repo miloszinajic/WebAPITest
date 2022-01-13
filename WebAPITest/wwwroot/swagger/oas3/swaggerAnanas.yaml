@@ -330,14 +330,12 @@ components:
           type: string
           description: Main category where product belongs
         attributes:
-          type: array
-          description: Attributes of product like color, size, material type, type of RAM, etc.
-          items:
-            type: object
-            additionalProperties:
-              type: array
-              items:
-                type: string    
+          type: object
+          description: Attributes of product like color, size, material type, type of RAM, etc.          
+          additionalProperties:
+            type: array
+            items:
+              type: string    
 
           
     TokenResponse:
