@@ -106,8 +106,9 @@ paths:
         '400':          
           $ref: '#/components/responses/400Error'          
         '500':          
-          $ref: '#/components/responses/500Error'          
-  
+          $ref: '#/components/responses/500Error'  
+
+  /product/api/v1/merchant-integration/import:
     post:
       security:
         - bearerAuth: []
@@ -119,13 +120,13 @@ paths:
         content:        
           application/json:
             schema:
-              $ref: '#/components/schemas/Products'
+              $ref: '#/components/schemas/ProductsRequest'
             # examples:            
             #   token:  
             #     $ref: '#/components/examples/token'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Products'
+              $ref: '#/components/schemas/ProductsRequest'
             # examples:            
             #   token:  
             #     $ref: '#/components/examples/token'          
@@ -215,43 +216,111 @@ components:
           type: string
           description: Always "public_api/full_access"
 
-    Products:
+    # ProductsRequest:
+    #   type: object
+    #   properties:
+    #     id:
+    #       type: integer
+    #       description: Product id
+    #     externalId:
+    #       type: integer
+    #       description: External id
+    #     ean:
+    #       type: string
+    #       description: Ean code
+    #     sku:
+    #       type: string
+    #       description: SKU
+    #     productName:
+    #       type: string
+    #       description: Product name
+    #     packageWeightValue:
+    #       type: number
+    #       description: Package weight value
+    #     packageWeightUnit:
+    #       # type: string
+    #       # description: Package weight unit
+    #       enum:
+    #         - 'kg'
+    #         - 'g'
+    #       default: 'kg'
+    #     basePrice:
+    #       type: number
+    #       description: Base price
+    #     stockLevel:
+    #       type: number
+    #       description: Stock level
+    #     vat:
+    #       type: number
+    #       description: VAT
+
+    ProductsRequest:
       type: object
       properties:
-        id:
-          type: integer
-          description: Product id
-        externalId:
-          type: integer
-          description: External id
-        ean:
-          type: string
-          description: Ean code
-        sku:
-          type: string
-          description: SKU
-        productName:
+        name:
           type: string
           description: Product name
+        description:
+          type: string
+          description: Product description 
+        coverImage:
+          type: string
+          description: Product cover image
+        ean:
+          type: string
+          description: Europian Article Number
+        brand:
+          type: string
+          description: Product brand
+        gallery:
+          type: array
+          description: Product images
+          items:
+            type: string
+        parentEan:
+          type: string
+          description: The product will be a variation of the product to which the EAN is entered        
         packageWeightValue:
           type: number
           description: Package weight value
         packageWeightUnit:
           # type: string
-          # description: Package weight unit
+          description: Package weight unit
           enum:
             - 'kg'
             - 'g'
           default: 'kg'
         basePrice:
           type: number
-          description: Base price
-        stockLevel:
-          type: number
-          description: Stock level
+          description: Product price with VAT included        
         vat:
           type: number
-          description: VAT
+          description: Product VAT
+        stockLevel:
+          type: integer
+          description: Stock level
+        sku:
+          type: string
+          description: Stock keeping unit
+        externalId:
+          type: string
+          description: Unique product identifier on merchant side
+        productType:
+          type: string
+          description: Type of product
+        category:
+          type: string
+          description: Main category where product belongs
+        attributes:
+          type: array
+          description: Attributes of product like color, size, material type, type of RAM, etc.
+          items:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string    
+
           
     TokenResponse:
       type: object
