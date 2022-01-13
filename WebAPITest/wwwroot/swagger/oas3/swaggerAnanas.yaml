@@ -112,7 +112,7 @@ paths:
     post:
       security:
         - bearerAuth: []
-      summary: Add or update product
+      summary: Add or update product or list of products
       description: Add or update product
       requestBody:        
         description: Optional description
