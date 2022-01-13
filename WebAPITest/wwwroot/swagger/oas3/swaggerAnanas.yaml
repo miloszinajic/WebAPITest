@@ -134,11 +134,11 @@ paths:
       responses:
         '200':
           description: Successfully returned list of products
-          content:
-            application/json:
-              schema:
-                type: array
-                $ref: '#/components/schemas/ProductsResponse'                  
+          # content:
+          #   application/json:
+          #     schema:
+          #       type: array
+          #       $ref: '#/components/schemas/ProductsResponse'                  
         '400':          
           $ref: '#/components/responses/400Error'          
         '500':          
