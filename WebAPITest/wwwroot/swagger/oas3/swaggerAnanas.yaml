@@ -59,7 +59,7 @@ paths:
     get:
       security:
         - bearerAuth: []
-      summary: Get all products
+      summary: Get products
       description: Get all products
       parameters:
         - in: query
