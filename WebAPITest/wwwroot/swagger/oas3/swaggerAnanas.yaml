@@ -121,15 +121,15 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProductsRequest'
-            # examples:            
-            #   token:  
-            #     $ref: '#/components/examples/token'
+            examples:            
+              token:  
+                $ref: '#/components/examples/productsRequest'
           application/xml:
             schema:
               $ref: '#/components/schemas/ProductsRequest'
-            # examples:            
-            #   token:  
-            #     $ref: '#/components/examples/token'          
+            examples:            
+              token:  
+                ref: '#/components/examples/productsRequest'
                                 
       responses:
         '200':
@@ -197,7 +197,25 @@ components:
         packageWeightValue: 0.3
         packageWeightUnit: "kg"
       summary: Products response example
-
+    ProductsRequest:
+      value:
+        name: "Samsung Pametni telefon Galaxy SM-A325F plavi"
+        description: "Samsung Galaxy SM-A325F. Dijagonala monitora: 16,3 cm..."
+        coverImage: "https://ananas.rs/_next/image?url=https%3A%2F%2Fstatic.ananas.rs%2Ftmp%2Fimage-thumbnails%2FProduct_Images%2FSmartphones%2Fsamsung_galaxy_sm_a325f_16_3_cm_6_4_dve_sim_kartice_4g_usb_tipa_c_4_gb_128_gb_5000_mah_plavo%2Fimage-thumb__295826__product_thumbnail%2F951c5c5b9fdddc72.jpeg&w=3200&q=75" 
+        ean: "9788644105886"
+        brand: "Samsung"
+        gallery: ["https://ananas.rs/_next/image?url=https%3A%2F%2Fstatic.ananas.rs%2Ftmp%2Fimage-thumbnails%2FProduct_Images%2FSmartphones%2Fsamsung_galaxy_sm_a325f_16_3_cm_6_4_dve_sim_kartice_4g_usb_tipa_c_4_gb_128_gb_5000_mah_plavo%2Fimage-thumb__295826__product_thumbnail%2F951c5c5b9fdddc72.jpeg&w=3200&q=75"]
+        parentEan: ""
+        packageWeightValue: 184
+        packageWeightUnit: "KG"
+        basePrice: 40000
+        vat: 20.00
+        stockLevel: 5
+        sku: "LXG9HET6O3"
+        externalId: "1"
+        productType: "Telefon"
+        category: "SMART mobilni telefoni"
+        attributes: [ Boja: ["Plava"], Sirina: ["73.6mm"], Dubina: ["8.4mm"]]
 
   schemas:
     Token:
@@ -287,9 +305,9 @@ components:
           # type: string
           description: Package weight unit
           enum:
-            - 'kg'
-            - 'g'
-          default: 'kg'
+            - 'KG'
+            - 'G'
+          default: 'KG'
         basePrice:
           type: number
           description: Product price with VAT included        
