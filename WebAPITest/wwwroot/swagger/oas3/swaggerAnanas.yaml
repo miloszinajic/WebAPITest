@@ -215,7 +215,10 @@ components:
         externalId: "1"
         productType: "Telefon"
         category: "SMART mobilni telefoni"
-        attributes: [ Boja: ["Plava"], Sirina: ["73.6mm"], Dubina: ["8.4mm"]]
+        attributes: 
+          Boja: ["Plava"]
+          Sirina: ["73.6mm"]
+          Dubina: ["8.4mm"]
 
   schemas:
     Token:
