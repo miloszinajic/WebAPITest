@@ -129,7 +129,7 @@ paths:
               $ref: '#/components/schemas/ProductsRequest'
             examples:            
               productsRequest:  
-                ref: '#/components/examples/productsRequest'
+                $ref: '#/components/examples/productsRequest'
                                 
       responses:
         '200':
