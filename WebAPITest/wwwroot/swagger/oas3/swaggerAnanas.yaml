@@ -122,13 +122,13 @@ paths:
             schema:
               $ref: '#/components/schemas/ProductsRequest'
             examples:            
-              token:  
+              productsRequest:  
                 $ref: '#/components/examples/productsRequest'
           application/xml:
             schema:
               $ref: '#/components/schemas/ProductsRequest'
             examples:            
-              token:  
+              productsRequest:  
                 ref: '#/components/examples/productsRequest'
                                 
       responses:
@@ -197,7 +197,7 @@ components:
         packageWeightValue: 0.3
         packageWeightUnit: "kg"
       summary: Products response example
-    ProductsRequest:
+    productsRequest:
       value:
         name: "Samsung Pametni telefon Galaxy SM-A325F plavi"
         description: "Samsung Galaxy SM-A325F. Dijagonala monitora: 16,3 cm..."
