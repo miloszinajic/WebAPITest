@@ -133,12 +133,14 @@ paths:
                                 
       responses:
         '200':
-          description: Successfully returned list of products
-          # content:
-          #   application/json:
-          #     schema:
-          #       type: array
-          #       $ref: '#/components/schemas/ProductsResponse'                  
+          description: Successfully returned token
+          content:
+            application/json:
+              schema:                                                 
+                  $ref: '#/components/schemas/ProductsImportResponse'   
+              examples:            
+                tokenResponse:  
+                  $ref: '#/components/examples/productsImportResponse'                         
         '400':          
           $ref: '#/components/responses/400Error'          
         '500':          
@@ -219,6 +221,11 @@ components:
           Boja: ["Plava"]
           Sirina: ["73.6mm"]
           Dubina: ["8.4mm"]
+
+    productsImportResponse:
+      value:
+        id: "afc1b015-d8fa-409e-b9d5-6b32d78d59f0"        
+      summary: Products import example      
 
   schemas:
     Token:
@@ -407,6 +414,13 @@ components:
         packageWeightUnit:
           type: string
           description: Product weight package unit
+
+    ProductsImportResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Progress id which can be used to track progress
         
   responses:
     400Error:
