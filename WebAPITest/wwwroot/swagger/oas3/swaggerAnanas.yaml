@@ -15,12 +15,12 @@ paths:
     post:
       # parameters:
       #   - $ref: '#/components/parameters/Origin'      
-      parameters:        
-        - in: header
-          name: Origin
-          schema:
-            type: string
-          required: true
+      # parameters:        
+      #   - in: header
+      #     name: Origin
+      #     schema:
+      #       type: string
+      #     required: true
       summary: Get token
       description: Get token description
       requestBody:        
