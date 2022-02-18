@@ -20,7 +20,7 @@ paths:
           name: X-API-Key
           schema:
             type: string
-            required: true
+            # required: true
       summary: Get token
       description: Get token description
       requestBody:        
