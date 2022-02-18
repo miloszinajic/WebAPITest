@@ -13,14 +13,14 @@ servers:
 paths:
   /iam/api/v1/auth/token:
     post:
-      # parameters:
-      #   - $ref: '#/components/parameters/Origin'      
-       parameters:        
-         - in: header
-           name: X-API-Key
-           schema:
-             type: string
-           required: true
+       parameters:
+         - $ref: '/components/parameters/X-API-Key'      
+       #parameters:        
+       # - in: header
+       #    name: X-API-Key
+       #    schema:
+       #      type: string
+       #    required: true
       summary: Get token
       description: Get token description
       requestBody:        
