@@ -170,8 +170,8 @@ components:
     tokenRequest:
       value:
         grantType: "CLIENT_CREDENTIALS"
-        clientId: "asdmgd1l2g67isfdlk"
-        clientSecret: "askldjdlgkjskmbkgfmk9hi99494gh743wjkerh239jr3995932jdwja="
+        clientId: "4q32r1euji6a0smrf6v0o1ohrv"
+        clientSecret: "qFFupoGOrUqwJl7A3MzIidysRlno8kEX+/GJAduCBK8zduNK9J6CMUk0dJMjdIAyEZ6y9+4zOHfCjeKrZL+MXsCviZ4="
         scope: "public_api/full_access"
       summary: Token request example      
     tokenResponse:
